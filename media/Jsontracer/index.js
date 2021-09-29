@@ -46,7 +46,7 @@
 // https://github.com/catapult-project/catapult/tree/444aba89e1c30edf348c611a9df79e2376178ba8/tracing
 
 import openFileSelector from './processData.js';
-// TODO import dynamicGraduation from "./dynamicGraduation.js";
+import dynamicGraduation from "./dynamicGraduation.js";
 
 const graph = document.querySelector('.graph');
 const sliderMaxLimit = 6400;
@@ -64,7 +64,7 @@ slider.addEventListener('input', event => {
   ratio = event.target.value * 1;
   graph.style.width = `${ratio}%`;
   changeSlider(event.target.value, event.target.max, event.target.min);
-  // TODO dynamicGraduation();
+  dynamicGraduation();
 });
 
 const zoomInBtn = document.querySelector('.zoom-in-btn');
@@ -83,7 +83,7 @@ zoomInBtn.addEventListener('click', () => {
   changeSlider(slider.value, slider.max, slider.min);
 
   // change graduation and set delay
-  // TODO dynamicGraduation();
+  dynamicGraduation();
   zoomInBtn.disabled = true;
   setTimeout(() => (zoomInBtn.disabled = false), 300);
 });
@@ -104,7 +104,7 @@ zoomOutBtn.addEventListener('click', () => {
   changeSlider(slider.value, slider.max, slider.min);
 
   // change graduation and set delay
-  // TODO dynamicGraduation();
+  dynamicGraduation();
   zoomOutBtn.disabled = true;
   setTimeout(() => (zoomOutBtn.disabled = false), 300);
 });
